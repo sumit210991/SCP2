@@ -1,0 +1,15 @@
+version: "3.8"
+
+volumes:
+  bookapp:
+
+services:
+  book-service:
+    container_name: book-service-c
+    build:
+      context: .
+    ports:
+      - "5001:5001"
+    volumes:
+      - bookapp:/bookapp
+    restart: always
